@@ -3,3 +3,4 @@ config();
 
 import '@/ai/flows/dynamic-testimonials.ts';
 import '@/ai/flows/ai-enhanced-about-us.ts';
+import '@/ai/flows/chatbot.ts';

@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
+import { Chatbot } from '@/components/chatbot';
 
 export const metadata: Metadata = {
   title: 'Rima Oil Services - Centro Digital',
@@ -26,6 +27,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <Chatbot />
         <Toaster />
       </body>
     </html>
