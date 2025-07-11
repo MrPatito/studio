@@ -8,7 +8,7 @@ const services = [
     title: "Mantenimiento Integral",
     description: "Ofrecemos soluciones integrales de mantenimiento para flotas pesadas y ligeras, así como para plantas de producción, asegurando un rendimiento óptimo y la longevidad de sus activos.",
     benefits: ["Reducción del Tiempo de Inactividad", "Aumento de la Vida Útil del Equipo", "Detección Proactiva de Problemas"],
-    image: "https://placehold.co/600x400.png?a=1",
+    image: "https://placehold.co/600x400.png",
     aiHint: "industrial maintenance",
   },
   {
@@ -16,7 +16,7 @@ const services = [
     title: "Fabricación y Modificaciones",
     description: "Nuestro equipo se especializa en fabricación y modificaciones a medida, entregando soluciones personalizadas que cumplen con los requisitos únicos de sus proyectos y necesidades operativas.",
     benefits: ["Soluciones a Medida", "Funcionalidad Mejorada", "Materiales de Alta Calidad"],
-    image: "https://placehold.co/600x400.png?a=2",
+    image: "https://placehold.co/600x400.png",
     aiHint: "metal fabrication"
   },
   {
@@ -24,15 +24,15 @@ const services = [
     title: "Asistencia Técnica In-Situ",
     description: "Ofrecemos asistencia técnica en el lugar para diagnosticar y resolver problemas rápidamente. Nuestros expertos brindan soporte práctico para minimizar las interrupciones operativas.",
     benefits: ["Soporte Rápido en Sitio", "Solución de Problemas por Expertos", "Interrupciones Mínimas"],
-    image: "https://placehold.co/600x400.png?a=3",
+    image: "https://placehold.co/600x400.png",
     aiHint: "engineer worksite"
   },
   {
     icon: <Factory className="w-8 h-8 text-primary" />,
     title: "Soluciones Industriales",
-    description: "Aprovechando nuestra experiencia multidisciplinaria, ofrecemos una amplia gama de soluciones industriales que cubren las disciplinas de ingeniería mecánica, eléctrica, hidráulica и civil.",
+    description: "Aprovechando nuestra experiencia multidisciplinaria, ofrecemos una amplia gama de soluciones industriales que cubren las disciplinas de ingeniería mecánica, eléctrica, hidráulica y civil.",
     benefits: ["Gestión Holística de Proyectos", "Experiencia Interdisciplinaria", "Resolución Innovadora de Problemas"],
-    image: "https://placehold.co/600x400.png?a=4",
+    image: "https://placehold.co/600x400.png",
     aiHint: "oil refinery"
   },
 ];
@@ -50,8 +50,8 @@ export default function ServicesPage() {
       <div className="space-y-16">
         {services.map((service, index) => (
           <Card key={service.title} className="overflow-hidden shadow-lg">
-            <div className={`grid md:grid-cols-2 items-center gap-8 ${index % 2 !== 0 ? 'md:grid-flow-col-dense' : ''}`}>
-              <div className={`p-8 md:p-12 ${index % 2 !== 0 ? 'md:col-start-2' : ''}`}>
+            <div className={`grid grid-cols-1 md:grid-cols-2 items-center ${index % 2 !== 0 ? 'md:grid-flow-col-dense' : ''}`}>
+               <div className={`order-last md:order-none p-8 md:p-12 ${index % 2 !== 0 ? 'md:col-start-2' : ''}`}>
                 <div className="flex items-center gap-4 mb-4">
                   <div className="bg-primary/10 p-3 rounded-full">{service.icon}</div>
                   <h2 className="text-2xl md:text-3xl font-bold font-headline text-foreground">{service.title}</h2>

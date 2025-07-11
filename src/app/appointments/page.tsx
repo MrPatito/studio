@@ -68,7 +68,7 @@ export default function AppointmentsPage() {
   return (
     <div className="container mx-auto px-4 md:px-6 py-12 md:py-20">
       <Card className="overflow-hidden shadow-lg">
-        <div className="grid md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="p-8 md:p-12">
             <CardHeader className="p-0 mb-6">
               <CardTitle className="text-3xl md:text-4xl font-bold font-headline">Agendar una Cita</CardTitle>
@@ -78,7 +78,7 @@ export default function AppointmentsPage() {
             </CardHeader>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <FormField
                     control={form.control}
                     name="name"
@@ -106,7 +106,7 @@ export default function AppointmentsPage() {
                     )}
                   />
                 </div>
-                <div className="grid sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <FormField
                     control={form.control}
                     name="email"
@@ -134,7 +134,7 @@ export default function AppointmentsPage() {
                     )}
                   />
                 </div>
-                <div className="grid sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <FormField
                     control={form.control}
                     name="service"

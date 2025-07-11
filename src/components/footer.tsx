@@ -5,8 +5,8 @@ export function Footer() {
   return (
     <footer className="bg-card border-t">
       <div className="container mx-auto px-4 md:px-6 py-8">
-        <div className="grid gap-8 md:grid-cols-3">
-          <div className="space-y-4">
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+          <div className="space-y-4 md:col-span-1 sm:col-span-2">
             <Logo />
             <p className="text-muted-foreground text-sm">
               Su socio de confianza para soluciones industriales y del sector petrolero.
@@ -19,6 +19,7 @@ export function Footer() {
               <li><Link href="/services" className="text-muted-foreground hover:text-primary">Servicios</Link></li>
               <li><Link href="/about" className="text-muted-foreground hover:text-primary">Sobre Nosotros</Link></li>
               <li><Link href="/contact" className="text-muted-foreground hover:text-primary">Contacto</Link></li>
+              <li><Link href="/testimonials" className="text-muted-foreground hover:text-primary">Testimonios</Link></li>
             </ul>
           </div>
           <div>

@@ -56,7 +56,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold font-headline">Nuestros Servicios Principales</h2>
             <p className="text-muted-foreground mt-2">Ofreciendo calidad y eficiencia en todas las disciplinas.</p>
           </div>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service) => (
               <Card key={service.title} className="text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardHeader className="items-center">
@@ -76,7 +76,7 @@ export default function Home() {
       
       <section className="py-16 md:py-24 bg-card">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <Image
                 src="https://placehold.co/600x400.png"

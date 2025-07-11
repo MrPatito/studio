@@ -57,7 +57,7 @@ export default function ContactPage() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-5 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
         <div className="md:col-span-2">
           <Card className="h-full shadow-lg">
             <CardHeader>
@@ -99,7 +99,7 @@ export default function ContactPage() {
             <CardContent>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <FormField
                       control={form.control}
                       name="name"

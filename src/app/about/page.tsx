@@ -7,25 +7,25 @@ const teamMembers = [
   {
     name: "Juan Pérez",
     role: "CEO e Ingeniero Principal",
-    image: "https://placehold.co/200x200.png?a=1",
+    image: "https://placehold.co/200x200.png",
     aiHint: "male portrait"
   },
   {
     name: "María García",
     role: "Jefa de Operaciones",
-    image: "https://placehold.co/200x200.png?a=2",
+    image: "https://placehold.co/200x200.png",
     aiHint: "female portrait"
   },
   {
     name: "David Chen",
     role: "Director Financiero",
-    image: "https://placehold.co/200x200.png?a=3",
+    image: "https://placehold.co/200x200.png",
     aiHint: "male portrait"
   },
   {
     name: "Aisha Mohammed",
     role: "Directora de Fabricación",
-    image: "https://placehold.co/200x200.png?a=4",
+    image: "https://placehold.co/200x200.png",
     aiHint: "female portrait"
   }
 ]
@@ -47,7 +47,7 @@ export default function AboutPage() {
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="prose lg:prose-xl max-w-none text-foreground">
               <h2 className="text-3xl md:text-4xl font-bold font-headline">Nuestra Historia</h2>
               <p className="mt-4 text-muted-foreground">
@@ -79,7 +79,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold font-headline">Nuestros Valores Fundamentales</h2>
             <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Los principios que guían nuestro trabajo y definen nuestro carácter.</p>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div className="text-center">
               <div className="inline-block bg-primary/10 p-4 rounded-full mb-4">
                 <Target className="w-10 h-10 text-primary" />
