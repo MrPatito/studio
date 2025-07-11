@@ -38,16 +38,16 @@ const prompt = ai.definePrompt({
   name: 'generateTestimonialPrompt',
   input: {schema: GenerateTestimonialInputSchema},
   output: {schema: GenerateTestimonialOutputSchema},
-  prompt: `You are a marketing expert specializing in crafting compelling testimonials.
-  Given the following project data, generate a testimonial that highlights the benefits and results achieved by the client.
-  The testimonial should sound authentic and resonate with potential clients in the same industry.
+  prompt: `Eres un experto en marketing especializado en crear testimonios convincentes.
+  Dados los siguientes datos del proyecto, genera un testimonio en español que resalte los beneficios y resultados obtenidos por el cliente.
+  El testimonio debe sonar auténtico y resonar con clientes potenciales de la misma industria.
 
-  Client Name: {{{clientName}}}
-  Client Industry: {{{clientIndustry}}}
-  Project Description: {{{projectDescription}}}
-  Project Results: {{{projectResults}}}
+  Nombre del Cliente: {{{clientName}}}
+  Industria del Cliente: {{{clientIndustry}}}
+  Descripción del Proyecto: {{{projectDescription}}}
+  Resultados del Proyecto: {{{projectResults}}}
 
-  Testimonial:
+  Testimonio:
   `,
 });
 

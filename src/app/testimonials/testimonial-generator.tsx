@@ -23,10 +23,10 @@ import { Loader2, Quote } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 
 const testimonialFormSchema = z.object({
-  clientName: z.string().min(2, 'Client name is required.'),
-  clientIndustry: z.string().min(2, 'Client industry is required.'),
-  projectDescription: z.string().min(20, 'Project description must be at least 20 characters.'),
-  projectResults: z.string().min(10, 'Project results must be at least 10 characters.'),
+  clientName: z.string().min(2, 'Se requiere el nombre del cliente.'),
+  clientIndustry: z.string().min(2, 'Se requiere la industria del cliente.'),
+  projectDescription: z.string().min(20, 'La descripción del proyecto debe tener al menos 20 caracteres.'),
+  projectResults: z.string().min(10, 'Los resultados del proyecto deben tener al menos 10 caracteres.'),
 });
 
 type TestimonialFormValues = z.infer<typeof testimonialFormSchema>;
@@ -54,14 +54,14 @@ export default function TestimonialGenerator() {
       if (result) {
         setGeneratedTestimonial(result.testimonial);
         toast({
-          title: 'Success!',
-          description: 'Testimonial generated successfully.',
+          title: '¡Éxito!',
+          description: 'Testimonio generado con éxito.',
         });
       }
     } catch (error) {
       toast({
         title: 'Error',
-        description: 'Failed to generate testimonial.',
+        description: 'No se pudo generar el testimonio.',
         variant: 'destructive',
       });
     } finally {
@@ -73,9 +73,9 @@ export default function TestimonialGenerator() {
     <div className="grid md:grid-cols-2 gap-8">
       <Card className="shadow-lg">
         <CardHeader>
-          <CardTitle>Project Details</CardTitle>
+          <CardTitle>Detalles del Proyecto</CardTitle>
           <CardDescription>
-            Enter the information about the completed project.
+            Ingrese la información sobre el proyecto completado.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -86,9 +86,9 @@ export default function TestimonialGenerator() {
                 name="clientName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Client Name</FormLabel>
+                    <FormLabel>Nombre del Cliente</FormLabel>
                     <FormControl>
-                      <Input placeholder="e.g., Global PetroCorp" {...field} />
+                      <Input placeholder="Ej: PetroCorp Global" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -99,9 +99,9 @@ export default function TestimonialGenerator() {
                 name="clientIndustry"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Client Industry</FormLabel>
+                    <FormLabel>Industria del Cliente</FormLabel>
                     <FormControl>
-                      <Input placeholder="e.g., Oil Exploration" {...field} />
+                      <Input placeholder="Ej: Exploración Petrolera" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -112,10 +112,10 @@ export default function TestimonialGenerator() {
                 name="projectDescription"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Project Description</FormLabel>
+                    <FormLabel>Descripción del Proyecto</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="Describe the project, including goals, challenges, and solutions provided."
+                        placeholder="Describe el proyecto, incluyendo metas, desafíos y soluciones proporcionadas."
                         rows={5}
                         {...field}
                       />
@@ -129,10 +129,10 @@ export default function TestimonialGenerator() {
                 name="projectResults"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Project Results</FormLabel>
+                    <FormLabel>Resultados del Proyecto</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="Describe the quantifiable results and benefits the client experienced."
+                        placeholder="Describe los resultados cuantificables y los beneficios que el cliente experimentó."
                         rows={3}
                         {...field}
                       />
@@ -145,10 +145,10 @@ export default function TestimonialGenerator() {
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Generating...
+                    Generando...
                   </>
                 ) : (
-                  'Generate Testimonial'
+                  'Generar Testimonio'
                 )}
               </Button>
             </form>
@@ -158,9 +158,9 @@ export default function TestimonialGenerator() {
 
       <Card className="shadow-lg">
         <CardHeader>
-          <CardTitle>Generated Testimonial</CardTitle>
+          <CardTitle>Testimonio Generado</CardTitle>
           <CardDescription>
-            The AI-generated content will appear below.
+            El contenido generado por IA aparecerá a continuación.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -177,7 +177,7 @@ export default function TestimonialGenerator() {
                 {generatedTestimonial}
               </blockquote>
             ) : (
-              <p className="text-muted-foreground text-center">Your generated testimonial will be displayed here.</p>
+              <p className="text-muted-foreground text-center">Su testimonio generado se mostrará aquí.</p>
             )}
           </div>
         </CardContent>

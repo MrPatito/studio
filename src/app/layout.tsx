@@ -6,8 +6,8 @@ import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Rima Oil Services - Digital Hub',
-  description: 'Integral maintenance, fabrication, and industrial solutions for the oil and industrial sector.',
+  title: 'Rima Oil Services - Centro Digital',
+  description: 'Mantenimiento integral, fabricación y soluciones industriales para el sector petrolero e industrial.',
 };
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="es" className="h-full">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

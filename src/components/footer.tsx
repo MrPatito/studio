@@ -9,29 +9,29 @@ export function Footer() {
           <div className="space-y-4">
             <Logo />
             <p className="text-muted-foreground text-sm">
-              Your trusted partner for industrial and oil sector solutions.
+              Su socio de confianza para soluciones industriales y del sector petrolero.
             </p>
           </div>
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-foreground mb-4">Enlaces Rápidos</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/" className="text-muted-foreground hover:text-primary">Home</Link></li>
-              <li><Link href="/services" className="text-muted-foreground hover:text-primary">Services</Link></li>
-              <li><Link href="/about" className="text-muted-foreground hover:text-primary">About Us</Link></li>
-              <li><Link href="/contact" className="text-muted-foreground hover:text-primary">Contact</Link></li>
+              <li><Link href="/" className="text-muted-foreground hover:text-primary">Inicio</Link></li>
+              <li><Link href="/services" className="text-muted-foreground hover:text-primary">Servicios</Link></li>
+              <li><Link href="/about" className="text-muted-foreground hover:text-primary">Sobre Nosotros</Link></li>
+              <li><Link href="/contact" className="text-muted-foreground hover:text-primary">Contacto</Link></li>
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Contact Us</h3>
+            <h3 className="font-semibold text-foreground mb-4">Contáctenos</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>info@rimaoil.com</li>
               <li>+1 (234) 567-890</li>
-              <li>123 Industrial Ave, Houston, TX</li>
+              <li>123 Avenida Industrial, Houston, TX</li>
             </ul>
           </div>
         </div>
         <div className="mt-8 border-t pt-4 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Rima Oil Services. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Rima Oil Services. Todos los Derechos Reservados.</p>
         </div>
       </div>
     </footer>

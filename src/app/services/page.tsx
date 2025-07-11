@@ -5,33 +5,33 @@ import Image from "next/image";
 const services = [
   {
     icon: <Wrench className="w-8 h-8 text-primary" />,
-    title: "Integral Maintenance",
-    description: "We provide comprehensive maintenance solutions for both heavy and light fleets, as well as production plants, ensuring optimal performance and longevity of your assets.",
-    benefits: ["Reduced Downtime", "Increased Equipment Lifespan", "Proactive Issue Detection"],
+    title: "Mantenimiento Integral",
+    description: "Ofrecemos soluciones integrales de mantenimiento para flotas pesadas y ligeras, así como para plantas de producción, asegurando un rendimiento óptimo y la longevidad de sus activos.",
+    benefits: ["Reducción del Tiempo de Inactividad", "Aumento de la Vida Útil del Equipo", "Detección Proactiva de Problemas"],
     image: "https://placehold.co/600x400.png?a=1",
     aiHint: "industrial maintenance",
   },
   {
     icon: <Hammer className="w-8 h-8 text-primary" />,
-    title: "Fabrication and Modifications",
-    description: "Our team specializes in custom fabrication and modifications, delivering tailored solutions that meet the unique requirements of your projects and operational needs.",
-    benefits: ["Custom-Built Solutions", "Enhanced Functionality", "High-Quality Materials"],
+    title: "Fabricación y Modificaciones",
+    description: "Nuestro equipo se especializa en fabricación y modificaciones a medida, entregando soluciones personalizadas que cumplen con los requisitos únicos de sus proyectos y necesidades operativas.",
+    benefits: ["Soluciones a Medida", "Funcionalidad Mejorada", "Materiales de Alta Calidad"],
     image: "https://placehold.co/600x400.png?a=2",
     aiHint: "metal fabrication"
   },
   {
     icon: <Headset className="w-8 h-8 text-primary" />,
-    title: "In-Situ Technical Assistance",
-    description: "We offer on-site technical assistance to diagnose and resolve issues swiftly. Our experts provide hands-on support to minimize operational disruptions.",
-    benefits: ["Rapid On-Site Support", "Expert Troubleshooting", "Minimized Disruptions"],
+    title: "Asistencia Técnica In-Situ",
+    description: "Ofrecemos asistencia técnica en el lugar para diagnosticar y resolver problemas rápidamente. Nuestros expertos brindan soporte práctico para minimizar las interrupciones operativas.",
+    benefits: ["Soporte Rápido en Sitio", "Solución de Problemas por Expertos", "Interrupciones Mínimas"],
     image: "https://placehold.co/600x400.png?a=3",
     aiHint: "engineer worksite"
   },
   {
     icon: <Factory className="w-8 h-8 text-primary" />,
-    title: "Industrial Solutions",
-    description: "Leveraging our multidisciplinary expertise, we deliver a wide range of industrial solutions covering mechanical, electrical, hydraulic, and civil engineering disciplines.",
-    benefits: ["Holistic Project Management", "Cross-Disciplinary Expertise", "Innovative Problem-Solving"],
+    title: "Soluciones Industriales",
+    description: "Aprovechando nuestra experiencia multidisciplinaria, ofrecemos una amplia gama de soluciones industriales que cubren las disciplinas de ingeniería mecánica, eléctrica, hidráulica и civil.",
+    benefits: ["Gestión Holística de Proyectos", "Experiencia Interdisciplinaria", "Resolución Innovadora de Problemas"],
     image: "https://placehold.co/600x400.png?a=4",
     aiHint: "oil refinery"
   },
@@ -41,9 +41,9 @@ export default function ServicesPage() {
   return (
     <div className="container mx-auto px-4 md:px-6 py-12 md:py-20">
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold font-headline text-foreground">Our Services</h1>
+        <h1 className="text-4xl md:text-5xl font-bold font-headline text-foreground">Nuestros Servicios</h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-          We offer a full spectrum of services designed to support the oil and industrial sectors. Our commitment is to deliver quality, efficiency, and reliability in every project we undertake.
+          Ofrecemos un espectro completo de servicios diseñados para apoyar a los sectores petrolero e industrial. Nuestro compromiso es ofrecer calidad, eficiencia y fiabilidad en cada proyecto que emprendemos.
         </p>
       </div>
 

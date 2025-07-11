@@ -19,10 +19,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 const contactFormSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters.'),
-  email: z.string().email('Please enter a valid email address.'),
-  subject: z.string().min(3, 'Subject must be at least 3 characters.'),
-  message: z.string().min(10, 'Message must be at least 10 characters.'),
+  name: z.string().min(2, 'El nombre debe tener al menos 2 caracteres.'),
+  email: z.string().email('Por favor, introduce una dirección de correo electrónico válida.'),
+  subject: z.string().min(3, 'El asunto debe tener al menos 3 caracteres.'),
+  message: z.string().min(10, 'El mensaje debe tener al menos 10 caracteres.'),
 });
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
@@ -42,8 +42,8 @@ export default function ContactPage() {
   function onSubmit(data: ContactFormValues) {
     console.log(data);
     toast({
-      title: 'Message Sent!',
-      description: 'Thank you for contacting us. We will get back to you soon.',
+      title: '¡Mensaje Enviado!',
+      description: 'Gracias por contactarnos. Nos pondremos en contacto contigo pronto.',
     });
     form.reset();
   }
@@ -51,9 +51,9 @@ export default function ContactPage() {
   return (
     <div className="container mx-auto px-4 md:px-6 py-12 md:py-20">
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold font-headline text-foreground">Get In Touch</h1>
+        <h1 className="text-4xl md:text-5xl font-bold font-headline text-foreground">Ponte en Contacto</h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-          We're here to help. Whether you have a question about our services, need technical assistance, or want to discuss a new project, our team is ready to answer all your questions.
+          Estamos aquí para ayudar. Si tienes una pregunta sobre nuestros servicios, necesitas asistencia técnica o quieres discutir un nuevo proyecto, nuestro equipo está listo para responder a todas tus preguntas.
         </p>
       </div>
 
@@ -61,28 +61,28 @@ export default function ContactPage() {
         <div className="md:col-span-2">
           <Card className="h-full shadow-lg">
             <CardHeader>
-              <CardTitle>Contact Information</CardTitle>
-              <CardDescription>Find us at our office or reach out via phone or email.</CardDescription>
+              <CardTitle>Información de Contacto</CardTitle>
+              <CardDescription>Encuéntranos en nuestra oficina o contáctanos por teléfono o correo electrónico.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6 text-sm">
               <div className="flex items-start gap-4">
                 <MapPin className="h-5 w-5 text-primary mt-1 shrink-0" />
                 <div>
-                  <h3 className="font-semibold text-foreground">Our Office</h3>
-                  <p className="text-muted-foreground">123 Industrial Avenue, Houston, TX, 77001, USA</p>
+                  <h3 className="font-semibold text-foreground">Nuestra Oficina</h3>
+                  <p className="text-muted-foreground">123 Avenida Industrial, Houston, TX, 77001, USA</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Mail className="h-5 w-5 text-primary mt-1 shrink-0" />
                 <div>
-                  <h3 className="font-semibold text-foreground">Email Us</h3>
+                  <h3 className="font-semibold text-foreground">Escríbenos</h3>
                   <p className="text-muted-foreground">info@rimaoil.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <Phone className="h-5 w-5 text-primary mt-1 shrink-0" />
                 <div>
-                  <h3 className="font-semibold text-foreground">Call Us</h3>
+                  <h3 className="font-semibold text-foreground">Llámanos</h3>
                   <p className="text-muted-foreground">+1 (234) 567-890</p>
                 </div>
               </div>
@@ -93,8 +93,8 @@ export default function ContactPage() {
         <div className="md:col-span-3">
           <Card className="shadow-lg">
             <CardHeader>
-              <CardTitle>Send Us a Message</CardTitle>
-              <CardDescription>Fill out the form and we'll be in touch as soon as possible.</CardDescription>
+              <CardTitle>Envíanos un Mensaje</CardTitle>
+              <CardDescription>Completa el formulario y nos pondremos en contacto lo antes posible.</CardDescription>
             </CardHeader>
             <CardContent>
               <Form {...form}>
@@ -105,9 +105,9 @@ export default function ContactPage() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Full Name</FormLabel>
+                          <FormLabel>Nombre Completo</FormLabel>
                           <FormControl>
-                            <Input placeholder="John Doe" {...field} />
+                            <Input placeholder="Juan Pérez" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -118,9 +118,9 @@ export default function ContactPage() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email Address</FormLabel>
+                          <FormLabel>Correo Electrónico</FormLabel>
                           <FormControl>
-                            <Input placeholder="you@example.com" {...field} />
+                            <Input placeholder="tu@ejemplo.com" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -132,9 +132,9 @@ export default function ContactPage() {
                     name="subject"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Subject</FormLabel>
+                        <FormLabel>Asunto</FormLabel>
                         <FormControl>
-                          <Input placeholder="e.g., Inquiry about Maintenance" {...field} />
+                          <Input placeholder="Ej: Consulta sobre Mantenimiento" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -145,10 +145,10 @@ export default function ContactPage() {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Your Message</FormLabel>
+                        <FormLabel>Tu Mensaje</FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder="Please describe your inquiry in detail..."
+                            placeholder="Por favor, describe tu consulta en detalle..."
                             className="resize-none"
                             rows={6}
                             {...field}
@@ -158,7 +158,7 @@ export default function ContactPage() {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" size="lg" className="w-full">Send Message</Button>
+                  <Button type="submit" size="lg" className="w-full">Enviar Mensaje</Button>
                 </form>
               </Form>
             </CardContent>

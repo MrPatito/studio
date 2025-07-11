@@ -29,15 +29,15 @@ const prompt = ai.definePrompt({
   name: 'tailoredAboutUsPrompt',
   input: {schema: TailoredAboutUsInputSchema},
   output: {schema: TailoredAboutUsOutputSchema},
-  prompt: `You are an expert in crafting compelling "About Us" sections for company websites.
+  prompt: `Eres un experto en crear secciones "Sobre Nosotros" atractivas para sitios web de empresas.
 
-You will generate a tailored "About Us" section for Rima Oil Service based on the industry of the website visitor.
+Generarás una sección "Sobre Nosotros" personalizada para Rima Oil Service basada en la industria del visitante del sitio web, en español.
 
-Rima Oil Service is a provider of integral maintenance, fabrication and modifications, in-situ technical assistance, and industrial solutions for the oil and industrial sector. Their services cover mechanical, electrical, hydraulic, and civil engineering disciplines for heavy/light fleets and production plants.
+Rima Oil Service es un proveedor de mantenimiento integral, fabricación y modificaciones, asistencia técnica in-situ y soluciones industriales para el sector petrolero e industrial. Sus servicios cubren las disciplinas de ingeniería mecánica, eléctrica, hidráulica y civil para flotas pesadas/ligeras y plantas de producción.
 
-Focus on highlighting Rima Oil Service's relevant expertise, experience, and values that would be most appealing to the visitor's industry.
+Concéntrate en resaltar la experiencia, trayectoria y valores relevantes de Rima Oil Service que serían más atractivos para la industria del visitante.
 
-Industry: {{{industry}}}
+Industria: {{{industry}}}
 `,
 });
 

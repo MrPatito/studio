@@ -21,11 +21,11 @@ import { Loader2 } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 
 const industries = [
-  { value: 'Oil & Gas', label: 'Oil & Gas' },
-  { value: 'Manufacturing', label: 'Manufacturing' },
-  { value: 'Marine', label: 'Marine & Shipping' },
-  { value: 'Construction', label: 'Heavy Construction' },
-  { value: 'Power Generation', label: 'Power Generation' },
+  { value: 'Petróleo y Gas', label: 'Petróleo y Gas' },
+  { value: 'Manufactura', label: 'Manufactura' },
+  { value: 'Marítimo y Naval', label: 'Marítimo y Naval' },
+  { value: 'Construcción Pesada', label: 'Construcción Pesada' },
+  { value: 'Generación de Energía', label: 'Generación de Energía' },
 ];
 
 export default function AboutUsGenerator() {
@@ -49,18 +49,17 @@ export default function AboutUsGenerator() {
         <Card className="shadow-lg">
           <CardHeader>
             <CardTitle className="text-3xl font-bold font-headline">
-              How We Serve Your Industry
+              Cómo Servimos a Su Industria
             </CardTitle>
             <CardDescription>
-              Select your industry to see how Rima Oil Service's expertise can
-              be tailored to your specific needs.
+              Seleccione su industria para ver cómo la experiencia de Rima Oil Service puede adaptarse a sus necesidades específicas.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <Select onValueChange={setIndustry} value={industry}>
                 <SelectTrigger className="flex-grow">
-                  <SelectValue placeholder="Select your industry..." />
+                  <SelectValue placeholder="Seleccione su industria..." />
                 </SelectTrigger>
                 <SelectContent>
                   {industries.map((item) => (
@@ -74,10 +73,10 @@ export default function AboutUsGenerator() {
                 {isPending ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Generating...
+                    Generando...
                   </>
                 ) : (
-                  'Generate'
+                  'Generar'
                 )}
               </Button>
             </div>
@@ -93,7 +92,7 @@ export default function AboutUsGenerator() {
                 <p>{content}</p>
               ) : (
                 <p className="text-muted-foreground">
-                  Your personalized "About Us" content will appear here...
+                  Su contenido personalizado de "Sobre Nosotros" aparecerá aquí...
                 </p>
               )}
             </div>

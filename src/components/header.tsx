@@ -12,11 +12,11 @@ import { cn } from '@/lib/utils';
 export function Header() {
   const pathname = usePathname();
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/services', label: 'Services' },
-    { href: '/about', label: 'About Us' },
-    { href: '/testimonials', label: 'Testimonials' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/', label: 'Inicio' },
+    { href: '/services', label: 'Servicios' },
+    { href: '/about', label: 'Sobre Nosotros' },
+    { href: '/testimonials', label: 'Testimonios' },
+    { href: '/contact', label: 'Contacto' },
   ];
 
   return (
@@ -41,16 +41,16 @@ export function Header() {
         </nav>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <Button asChild variant="outline" className="hidden sm:inline-flex">
-            <Link href="/appointments">Request a Quote</Link>
+            <Link href="/appointments">Solicitar Cotización</Link>
           </Button>
           <Button asChild>
-            <Link href="/contact">Contact Us</Link>
+            <Link href="/contact">Contáctenos</Link>
           </Button>
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
                 <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle navigation menu</span>
+                <span className="sr-only">Alternar menú de navegación</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="left">

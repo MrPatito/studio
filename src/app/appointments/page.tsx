@@ -32,13 +32,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import Image from 'next/image';
 
 const appointmentFormSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters.'),
+  name: z.string().min(2, 'El nombre debe tener al menos 2 caracteres.'),
   company: z.string().optional(),
-  email: z.string().email('Please enter a valid email address.'),
+  email: z.string().email('Por favor, introduce una dirección de correo electrónico válida.'),
   phone: z.string().optional(),
-  service: z.string({ required_error: 'Please select a service.' }),
-  preferredDate: z.date({ required_error: 'A preferred date is required.' }),
-  message: z.string().min(10, 'Message must be at least 10 characters.'),
+  service: z.string({ required_error: 'Por favor, selecciona un servicio.' }),
+  preferredDate: z.date({ required_error: 'Se requiere una fecha de preferencia.' }),
+  message: z.string().min(10, 'El mensaje debe tener al menos 10 caracteres.'),
 });
 
 type AppointmentFormValues = z.infer<typeof appointmentFormSchema>;
@@ -59,8 +59,8 @@ export default function AppointmentsPage() {
   function onSubmit(data: AppointmentFormValues) {
     console.log(data);
     toast({
-      title: 'Appointment Request Sent!',
-      description: 'Thank you. We have received your request and will contact you shortly to confirm.',
+      title: '¡Solicitud de Cita Enviada!',
+      description: 'Gracias. Hemos recibido tu solicitud y te contactaremos en breve para confirmar.',
     });
     form.reset();
   }
@@ -71,9 +71,9 @@ export default function AppointmentsPage() {
         <div className="grid md:grid-cols-2">
           <div className="p-8 md:p-12">
             <CardHeader className="p-0 mb-6">
-              <CardTitle className="text-3xl md:text-4xl font-bold font-headline">Schedule an Appointment</CardTitle>
+              <CardTitle className="text-3xl md:text-4xl font-bold font-headline">Agendar una Cita</CardTitle>
               <CardDescription className="text-lg mt-2">
-                Request a diagnostic or advisory session with our experts. Fill out the form below, and we'll get back to you to arrange a suitable time.
+                Solicita una sesión de diagnóstico o asesoramiento con nuestros expertos. Completa el formulario a continuación y nos pondremos en contacto contigo para coordinar un horario conveniente.
               </CardDescription>
             </CardHeader>
             <Form {...form}>
@@ -84,9 +84,9 @@ export default function AppointmentsPage() {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Full Name</FormLabel>
+                        <FormLabel>Nombre Completo</FormLabel>
                         <FormControl>
-                          <Input placeholder="John Doe" {...field} />
+                          <Input placeholder="Juan Pérez" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -97,9 +97,9 @@ export default function AppointmentsPage() {
                     name="company"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Company</FormLabel>
+                        <FormLabel>Empresa</FormLabel>
                         <FormControl>
-                          <Input placeholder="Your Company Inc." {...field} />
+                          <Input placeholder="Tu Empresa S.A." {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -112,9 +112,9 @@ export default function AppointmentsPage() {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email Address</FormLabel>
+                        <FormLabel>Correo Electrónico</FormLabel>
                         <FormControl>
-                          <Input placeholder="you@example.com" {...field} />
+                          <Input placeholder="tu@ejemplo.com" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -125,7 +125,7 @@ export default function AppointmentsPage() {
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Phone Number (Optional)</FormLabel>
+                        <FormLabel>Teléfono (Opcional)</FormLabel>
                         <FormControl>
                           <Input placeholder="+1 (555) 123-4567" {...field} />
                         </FormControl>
@@ -140,19 +140,19 @@ export default function AppointmentsPage() {
                     name="service"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Service of Interest</FormLabel>
+                        <FormLabel>Servicio de Interés</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger>
-                              <SelectValue placeholder="Select a service" />
+                              <SelectValue placeholder="Selecciona un servicio" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="integral-maintenance">Integral Maintenance</SelectItem>
-                            <SelectItem value="fabrication-modifications">Fabrication & Modifications</SelectItem>
-                            <SelectItem value="technical-assistance">In-Situ Technical Assistance</SelectItem>
-                            <SelectItem value="industrial-solutions">Industrial Solutions</SelectItem>
-                            <SelectItem value="other">Other</SelectItem>
+                            <SelectItem value="integral-maintenance">Mantenimiento Integral</SelectItem>
+                            <SelectItem value="fabrication-modifications">Fabricación y Modificaciones</SelectItem>
+                            <SelectItem value="technical-assistance">Asistencia Técnica In-Situ</SelectItem>
+                            <SelectItem value="industrial-solutions">Soluciones Industriales</SelectItem>
+                            <SelectItem value="other">Otro</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -164,7 +164,7 @@ export default function AppointmentsPage() {
                     name="preferredDate"
                     render={({ field }) => (
                       <FormItem className="flex flex-col">
-                        <FormLabel>Preferred Date</FormLabel>
+                        <FormLabel>Fecha de Preferencia</FormLabel>
                         <Popover>
                           <PopoverTrigger asChild>
                             <FormControl>
@@ -175,7 +175,7 @@ export default function AppointmentsPage() {
                                   !field.value && 'text-muted-foreground'
                                 )}
                               >
-                                {field.value ? format(field.value, 'PPP') : <span>Pick a date</span>}
+                                {field.value ? format(field.value, 'PPP') : <span>Elige una fecha</span>}
                                 <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                               </Button>
                             </FormControl>
@@ -200,10 +200,10 @@ export default function AppointmentsPage() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Additional Information</FormLabel>
+                      <FormLabel>Información Adicional</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="Tell us a little more about your needs..."
+                          placeholder="Cuéntanos un poco más sobre tus necesidades..."
                           className="resize-none"
                           rows={5}
                           {...field}
@@ -213,14 +213,14 @@ export default function AppointmentsPage() {
                     </FormItem>
                   )}
                 />
-                <Button type="submit" size="lg" className="w-full">Request Appointment</Button>
+                <Button type="submit" size="lg" className="w-full">Solicitar Cita</Button>
               </form>
             </Form>
           </div>
           <div className="hidden md:block">
             <Image
               src="https://placehold.co/600x800.png"
-              alt="Technician scheduling"
+              alt="Técnico agendando"
               width={600}
               height={800}
               className="object-cover w-full h-full"
