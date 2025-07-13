@@ -26,6 +26,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { CalendarIcon } from 'lucide-react';
 import { Calendar } from '@/components/ui/calendar';
 import { format } from 'date-fns';
+import { es } from 'date-fns/locale';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -64,6 +65,18 @@ export default function AppointmentsPage() {
     });
     form.reset();
   }
+
+  const isDayDisabled = (date: Date) => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Set to the beginning of the day for an accurate comparison
+    
+    // Disable past dates
+    if (date < today) return true;
+
+    const dayOfWeek = date.getDay();
+    // Disable Tuesday (2), Friday (5), Saturday (6), and Sunday (0)
+    return dayOfWeek === 2 || dayOfWeek === 5 || dayOfWeek === 6 || dayOfWeek === 0;
+  };
 
   return (
     <div className="container mx-auto px-4 md:px-6 py-12 md:py-20">
@@ -175,7 +188,7 @@ export default function AppointmentsPage() {
                                   !field.value && 'text-muted-foreground'
                                 )}
                               >
-                                {field.value ? format(field.value, 'PPP') : <span>Elige una fecha</span>}
+                                {field.value ? format(field.value, 'PPP', { locale: es }) : <span>Elige una fecha</span>}
                                 <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                               </Button>
                             </FormControl>
@@ -185,8 +198,9 @@ export default function AppointmentsPage() {
                               mode="single"
                               selected={field.value}
                               onSelect={field.onChange}
-                              disabled={(date) => date < new Date() || date < new Date('1900-01-01')}
+                              disabled={isDayDisabled}
                               initialFocus
+                              locale={es}
                             />
                           </PopoverContent>
                         </Popover>
